@@ -134,13 +134,13 @@
     }
 
     /* AVATAR */
-    .avatar{
-      position:relative;
-      display:flex;
-      justify-content:center;
-    }
+.avatar{
+  position:relative;
+  display:flex;
+  justify-content:center;
+}
 
-    .avatar img{
+.avatar img{
   width:360px;
   height:360px;
   border-radius:50%;
@@ -154,7 +154,13 @@
   animation:float 6s ease-in-out infinite;
 }
 
-    }
+.glow{
+  position:absolute;
+  inset:-30px;
+  background:radial-gradient(circle, rgba(255,79,216,.35), transparent 70%);
+  filter:blur(40px);
+  z-index:-1;
+}
 
     .glow{
       position:absolute;
@@ -217,6 +223,7 @@
 
 </body>
 </html>
+
 
 
 
