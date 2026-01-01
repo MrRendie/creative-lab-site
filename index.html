@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mr_Rendie_Hub</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#0e0e11;
@@ -18,6 +20,7 @@
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
+
     body{
       font-family:'Montserrat',sans-serif;
       background:radial-gradient(ellipse at top, #1a1a25 0%, var(--bg) 60%);
@@ -86,7 +89,6 @@
       font-size:clamp(36px,5vw,64px);
       line-height:1.1;
       margin-bottom:24px;
-      animation:fadeUp 1.2s ease forwards;
     }
 
     .hero h1 span{
@@ -98,14 +100,12 @@
       font-size:18px;
       color:var(--gray);
       max-width:520px;
-      animation:fadeUp 1.4s ease forwards;
     }
 
     .hero-actions{
       margin-top:40px;
       display:flex;
       gap:20px;
-      animation:fadeUp 1.6s ease forwards;
     }
 
     .btn{
@@ -133,7 +133,7 @@
       box-shadow:0 0 40px rgba(139,92,255,.45);
     }
 
-    /* VISUAL */
+    /* AVATAR */
     .avatar{
       position:relative;
       display:flex;
@@ -141,25 +141,21 @@
     }
 
     .avatar img{
-      width:100%;
-      max-width:420px;
-      border-radius:24px;
-      box-shadow:0 0 80px rgba(255,79,216,.35);
+      width:320px;
+      height:320px;
+      object-fit:cover;
+      border-radius:50%;
+      border:3px solid rgba(255,79,216,.6);
+      box-shadow:0 0 80px rgba(255,79,216,.45);
       animation:float 6s ease-in-out infinite;
     }
 
     .glow{
       position:absolute;
-      inset:-20px;
+      inset:-30px;
       background:radial-gradient(circle, rgba(255,79,216,.35), transparent 70%);
       filter:blur(40px);
       z-index:-1;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp{
-      from{opacity:0;transform:translateY(30px)}
-      to{opacity:1;transform:none}
     }
 
     @keyframes float{
@@ -167,7 +163,6 @@
       50%{transform:translateY(-16px)}
     }
 
-    /* FOOTER */
     footer{
       padding:40px;
       text-align:center;
@@ -196,16 +191,16 @@
   <div class="hero-grid">
     <div>
       <h1>Добро пожаловать в <span>Mr_Rendie_Hub</span></h1>
-      <p>Авторская лаборатория проектов: музыка, игры, манга, анимация и эксперименты. Всё — в одном стиле, одном мире и одном хабе.</p>
+      <p>Авторская лаборатория проектов: музыка, игры, манга, анимация и эксперименты.</p>
       <div class="hero-actions">
-        <button class="btn" onclick="location.href='projects.html'">Перейти к проектам</button>
+        <button class="btn" onclick="location.href='projects.html'">Проекты</button>
         <button class="btn secondary">О бренде</button>
       </div>
     </div>
 
     <div class="avatar">
       <div class="glow"></div>
-      <img src="assets/img/avatar.jpg" alt="Mr Rendie" />
+      <img src="assets/img/avatar.png" alt="Mr Rendie" />
     </div>
   </div>
 </section>
@@ -216,6 +211,8 @@
 
 </body>
 </html>
+
+
 
 
 
