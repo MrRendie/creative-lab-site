@@ -1,66 +1,222 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Творческая лаборатория</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr_Rendie_Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0e0e11;
+      --bg-soft:#16161d;
+      --milk:#f5f2ee;
+      --pink:#ff4fd8;
+      --violet:#8b5cff;
+      --gray:#9aa0a6;
+    }
 
-  <!-- Стили -->
-  <link rel="stylesheet" href="assets/css/style.css">
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:radial-gradient(ellipse at top, #1a1a25 0%, var(--bg) 60%);
+      color:var(--milk);
+      overflow-x:hidden;
+    }
+
+    /* HEADER */
+    header{
+      position:fixed;
+      top:0;left:0;right:0;
+      height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 40px;
+      background:rgba(14,14,17,.6);
+      backdrop-filter:blur(12px);
+      z-index:100;
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+
+    .brand{
+      font-weight:900;
+      font-size:22px;
+      letter-spacing:1px;
+      color:var(--pink);
+      text-shadow:0 0 12px rgba(255,79,216,.6);
+    }
+
+    nav a{
+      margin-left:28px;
+      text-decoration:none;
+      color:var(--milk);
+      font-weight:500;
+      position:relative;
+    }
+
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0;bottom:-6px;
+      width:0;height:2px;
+      background:linear-gradient(90deg,var(--pink),var(--violet));
+      transition:.3s;
+    }
+
+    nav a:hover::after{width:100%}
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:120px 10vw 80px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size:clamp(36px,5vw,64px);
+      line-height:1.1;
+      margin-bottom:24px;
+      animation:fadeUp 1.2s ease forwards;
+    }
+
+    .hero h1 span{
+      color:var(--pink);
+      text-shadow:0 0 18px rgba(255,79,216,.7);
+    }
+
+    .hero p{
+      font-size:18px;
+      color:var(--gray);
+      max-width:520px;
+      animation:fadeUp 1.4s ease forwards;
+    }
+
+    .hero-actions{
+      margin-top:40px;
+      display:flex;
+      gap:20px;
+      animation:fadeUp 1.6s ease forwards;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:14px;
+      border:none;
+      cursor:pointer;
+      font-weight:600;
+      font-size:15px;
+      color:#000;
+      background:linear-gradient(135deg,var(--pink),var(--violet));
+      box-shadow:0 0 25px rgba(255,79,216,.35);
+      transition:.3s;
+    }
+
+    .btn.secondary{
+      background:none;
+      color:var(--milk);
+      border:1px solid rgba(255,255,255,.15);
+      box-shadow:none;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px) scale(1.03);
+      box-shadow:0 0 40px rgba(139,92,255,.45);
+    }
+
+    /* VISUAL */
+    .avatar{
+      position:relative;
+      display:flex;
+      justify-content:center;
+    }
+
+    .avatar img{
+      width:100%;
+      max-width:420px;
+      border-radius:24px;
+      box-shadow:0 0 80px rgba(255,79,216,.35);
+      animation:float 6s ease-in-out infinite;
+    }
+
+    .glow{
+      position:absolute;
+      inset:-20px;
+      background:radial-gradient(circle, rgba(255,79,216,.35), transparent 70%);
+      filter:blur(40px);
+      z-index:-1;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(30px)}
+      to{opacity:1;transform:none}
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-16px)}
+    }
+
+    /* FOOTER */
+    footer{
+      padding:40px;
+      text-align:center;
+      color:var(--gray);
+      border-top:1px solid rgba(255,255,255,.05);
+    }
+
+    @media(max-width:900px){
+      .hero-grid{grid-template-columns:1fr}
+      header{padding:0 20px}
+    }
+  </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="logo">Творческая лаборатория</div>
-
-  <nav class="nav">
+<header>
+  <div class="brand">Mr_Rendie_Hub</div>
+  <nav>
     <a href="index.html">Главная</a>
     <a href="projects.html">Проекты</a>
     <a href="contact.html">Контакты</a>
-    <button id="themeToggle">🌓</button>
   </nav>
 </header>
 
-<main>
-  <section class="hero">
-    <h1>Творческая лаборатория</h1>
-    <p>Музыка · Игры · Манга · Анимация · Боты</p>
-  </section>
-
-  <section class="about">
-    <h2>О проекте</h2>
-    <p>
-      Это независимая площадка для публикации моих творческих проектов.
-      Без трекеров, без рекламы, без слежки.
-    </p>
-  </section>
-
-  <section class="featured">
-    <h2>Избранные проекты</h2>
-
-    <div class="cards">
-      <div class="card">
-        <h3>Музыкальный альбом</h3>
-        <p>Экспериментальный саунд</p>
-        <a href="downloads/music/">Скачать</a>
-      </div>
-
-      <div class="card">
-        <h3>Инди-игра</h3>
-        <p>Атмосферный проект</p>
-        <a href="downloads/games/">Скачать</a>
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <h1>Добро пожаловать в <span>Mr_Rendie_Hub</span></h1>
+      <p>Авторская лаборатория проектов: музыка, игры, манга, анимация и эксперименты. Всё — в одном стиле, одном мире и одном хабе.</p>
+      <div class="hero-actions">
+        <button class="btn" onclick="location.href='projects.html'">Перейти к проектам</button>
+        <button class="btn secondary">О бренде</button>
       </div>
     </div>
-  </section>
-</main>
 
-<footer class="footer">
-  <p>© 2026 Творческая лаборатория</p>
+    <div class="avatar">
+      <div class="glow"></div>
+      <img src="assets/img/avatar.jpg" alt="Mr Rendie" />
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Mr_Rendie_Hub
 </footer>
 
-<script src="assets/js/script.js"></script>
 </body>
 </html>
-<!-- trigger github pages -->
+
+
 
 
