@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Проекты — Творческая лаборатория</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">Творческая лаборатория</div>
+
+  <nav class="nav">
+    <a href="index.html">Главная</a>
+    <a href="projects.html">Проекты</a>
+    <a href="contact.html">Контакты</a>
+    <button id="themeToggle">🌓</button>
+  </nav>
+</header>
+
+<script src="https://utteranc.es/client.js"
+        repo="Mr_Rendie/creative-lab-site"
+        issue-term="pathname"
+        label="pathname"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<main>
+  <section class="hero">
+    <h1>Проекты</h1>
+    <p>Все мои работы в одном месте</p>
+  </section>
+
+  <!-- Фильтры -->
+  <section class="filters">
+    <button data-filter="all">Все</button>
+    <button data-filter="music">Музыка</button>
+    <button data-filter="games">Игры</button>
+    <button data-filter="manga">Манга</button>
+    <button data-filter="animation">Анимация</button>
+    <button data-filter="bots">Боты</button>
+  </section>
+
+  <!-- Проекты -->
+  <section class="cards" id="projects">
+    <div class="card" data-category="music">
+      <h3>Музыкальный альбом</h3>
+      <p>Экспериментальный саунд</p>
+      <a href="downloads/music/">Скачать</a>
+    </div>
+
+    <div class="card" data-category="games">
+      <h3>Инди-игра</h3>
+      <p>Атмосферный проект</p>
+      <a href="downloads/games/">Скачать</a>
+    </div>
+
+    <div class="card" data-category="manga">
+      <h3>Манга: Глава 1</h3>
+      <p>Мрачное фэнтези</p>
+      <a href="downloads/manga/">Читать</a>
+    </div>
+
+    <div class="card" data-category="animation">
+      <h3>Анимационный клип</h3>
+      <p>Короткометражка</p>
+      <a href="downloads/animations/">Смотреть</a>
+    </div>
+
+    <div class="card" data-category="bots">
+      <h3>Telegram-бот</h3>
+      <p>Автоматизация</p>
+      <a href="#">Описание</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2026 Творческая лаборатория</p>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

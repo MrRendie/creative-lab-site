@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Контакты — Творческая лаборатория</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">Творческая лаборатория</div>
+
+  <nav class="nav">
+    <a href="index.html">Главная</a>
+    <a href="projects.html">Проекты</a>
+    <a href="contact.html">Контакты</a>
+    <button id="themeToggle">🌓</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Связаться</h1>
+    <p>Без регистрации и лишних данных</p>
+  </section>
+
+  <section class="contact">
+    <<form action="https://formspree.io/f/mojvjynz" method="POST">
+
+      
+      <label>
+        Сообщение
+        <textarea name="message" required></textarea>
+      </label>
+
+      <!-- анти-бот поле -->
+      <input type="text" name="_gotcha" style="display:none">
+
+      <button type="submit">Отправить</button>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2026 Творческая лаборатория</p>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
