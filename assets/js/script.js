@@ -33,3 +33,38 @@ filterButtons.forEach(button => {
     });
   });
 });
+
+const audio = document.getElementById("audio");
+const playBtn = document.querySelector(".play-btn");
+const progress = document.querySelector(".progress");
+const currentTimeEl = document.querySelector(".current-time");
+const durationEl = document.querySelector(".duration");
+
+playBtn.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    playBtn.textContent = "❚❚";
+  } else {
+    audio.pause();
+    playBtn.textContent = "▶";
+  }
+});
+
+audio.addEventListener("loadedmetadata", () => {
+  durationEl.textContent = formatTime(audio.duration);
+});
+
+audio.addEventListener("timeupdate", () => {
+  progress.value = (audio.currentTime / audio.duration) * 100;
+  currentTimeEl.textContent = formatTime(audio.currentTime);
+});
+
+progress.addEventListener("input", () => {
+  audio.currentTime = (progress.value / 100) * audio.duration;
+});
+
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60).toString().padStart(2, "0");
+  return `${minutes}:${seconds}`;
+}
