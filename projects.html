@@ -39,26 +39,35 @@
 <section class="music-list">
 
   <!-- ТРЕК -->
-  <div class="track">
-    <div class="track-info">
-      <h3>Желания</h3>
-      <p>Ностальгическое настроение. О том, что не сбылось, но осталось внутри.</p>
+ <div class="track neon-player">
+
+  <div class="cover">
+    <img src="../assets/img/zhelaniya-cover.jpg" alt="Желания — обложка">
+  </div>
+
+  <div class="player-info">
+    <h3>Желания</h3>
+    <p>Ностальгическое настроение. О том, что не сбылось, но осталось внутри.</p>
+
+    <div class="controls">
+      <button class="play-btn">▶</button>
+
+      <div class="progress-container">
+        <span class="current-time">0:00</span>
+        <input type="range" class="progress" value="0">
+        <span class="duration">0:00</span>
+      </div>
     </div>
 
-    <div class="track-controls">
-      <audio controls preload="none">
-        <source src="../assets/music/zhelaniya.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
-      </audio>
+    <a class="download-btn" href="../assets/music/zhelaniya.mp3" download>
+      ⬇ Скачать
+    </a>
+  </div>
 
-      <a
-        class="download-btn"
-        href="../assets/music/zhelaniya.mp3"
-        download
-      >
-        ⬇ Скачать
-      </a>
-    </div>
+  <audio id="audio" src="../assets/music/zhelaniya.mp3"></audio>
+
+</div>
+
   </div>
 
   <!-- 👉 СЮДА ТЫ ПРОСТО КОПИРУЕШЬ БЛОК ДЛЯ НОВЫХ ТРЕКОВ -->
@@ -100,6 +109,7 @@
 <script src="../assets/js/script.js"></script>
 </body>
 </html>
+
 
 
 
