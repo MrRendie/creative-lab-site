@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg: #ffffff;
   --text: #111111;
@@ -113,3 +117,4 @@ button[type="submit"] {
   margin: 3rem auto;
   padding: 1rem;
 }
+
