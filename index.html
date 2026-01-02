@@ -1,229 +1,267 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mr_Rendie_Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr_Rendie_Hub</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#0e0e11;
-      --bg-soft:#16161d;
-      --milk:#f5f2ee;
-      --pink:#ff4fd8;
-      --violet:#8b5cff;
-      --gray:#9aa0a6;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-
-    body{
-      font-family:'Montserrat',sans-serif;
-      background:radial-gradient(ellipse at top, #1a1a25 0%, var(--bg) 60%);
-      color:var(--milk);
-      overflow-x:hidden;
-    }
-
-    /* HEADER */
-    header{
-      position:fixed;
-      top:0;left:0;right:0;
-      height:72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 40px;
-      background:rgba(14,14,17,.6);
-      backdrop-filter:blur(12px);
-      z-index:100;
-      border-bottom:1px solid rgba(255,255,255,.05);
-    }
-
-    .brand{
-      font-weight:900;
-      font-size:22px;
-      letter-spacing:1px;
-      color:var(--pink);
-      text-shadow:0 0 12px rgba(255,79,216,.6);
-    }
-
-    nav a{
-      margin-left:28px;
-      text-decoration:none;
-      color:var(--milk);
-      font-weight:500;
-      position:relative;
-    }
-
-    nav a::after{
-      content:"";
-      position:absolute;
-      left:0;bottom:-6px;
-      width:0;height:2px;
-      background:linear-gradient(90deg,var(--pink),var(--violet));
-      transition:.3s;
-    }
-
-    nav a:hover::after{width:100%}
-
-    /* HERO */
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      padding:120px 10vw 80px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:60px;
-      align-items:center;
-    }
-
-    .hero h1{
-      font-size:clamp(36px,5vw,64px);
-      line-height:1.1;
-      margin-bottom:24px;
-    }
-
-    .hero h1 span{
-      color:var(--pink);
-      text-shadow:0 0 18px rgba(255,79,216,.7);
-    }
-
-    .hero p{
-      font-size:18px;
-      color:var(--gray);
-      max-width:520px;
-    }
-
-    .hero-actions{
-      margin-top:40px;
-      display:flex;
-      gap:20px;
-    }
-
-    .btn{
-      padding:14px 28px;
-      border-radius:14px;
-      border:none;
-      cursor:pointer;
-      font-weight:600;
-      font-size:15px;
-      color:#000;
-      background:linear-gradient(135deg,var(--pink),var(--violet));
-      box-shadow:0 0 25px rgba(255,79,216,.35);
-      transition:.3s;
-    }
-
-    .btn.secondary{
-      background:none;
-      color:var(--milk);
-      border:1px solid rgba(255,255,255,.15);
-      box-shadow:none;
-    }
-
-    .btn:hover{
-      transform:translateY(-2px) scale(1.03);
-      box-shadow:0 0 40px rgba(139,92,255,.45);
-    }
-
-    /* AVATAR */
-.avatar{
-  position:relative;
-  display:flex;
-  justify-content:center;
+<style>
+:root{
+  --bg:#0e0e11;
+  --bg-soft:#16161d;
+  --milk:#f5f2ee;
+  --pink:#ff4fd8;
+  --violet:#8b5cff;
+  --gray:#9aa0a6;
 }
 
-.avatar img{
-  width:360px;
-  height:360px;
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:radial-gradient(ellipse at top,#1a1a25 0%,var(--bg) 60%);
+  color:var(--milk);
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  inset:0 0 auto 0;
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 40px;
+  backdrop-filter:blur(12px);
+  background:rgba(14,14,17,.6);
+  border-bottom:1px solid rgba(255,255,255,.05);
+  z-index:100;
+}
+
+.brand{
+  font-weight:900;
+  color:var(--pink);
+  letter-spacing:1px;
+  text-shadow:0 0 14px rgba(255,79,216,.6);
+}
+
+nav a{
+  color:var(--milk);
+  text-decoration:none;
+  margin-left:28px;
+  font-weight:500;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  padding:120px 10vw 80px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+/* ICON HUB */
+.hub{
+  width:320px;
+  height:320px;
   border-radius:50%;
-  object-fit:cover;
-
-  border:3px solid rgba(255,79,216,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:120px;
+  background:radial-gradient(circle at top,var(--pink),var(--violet));
+  color:#000;
   box-shadow:
-    0 0 25px rgba(255,79,216,.45),
-    0 0 60px rgba(139,92,255,.35);
-
+    0 0 40px rgba(255,79,216,.6),
+    0 0 90px rgba(139,92,255,.4);
   animation:float 6s ease-in-out infinite;
 }
 
-.glow{
-  position:absolute;
-  inset:-30px;
-  background:radial-gradient(circle, rgba(255,79,216,.35), transparent 70%);
-  filter:blur(40px);
-  z-index:-1;
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-18px)}
 }
 
-    .glow{
-      position:absolute;
-      inset:-30px;
-      background:radial-gradient(circle, rgba(255,79,216,.35), transparent 70%);
-      filter:blur(40px);
-      z-index:-1;
-    }
+/* TEXT */
+.hero h1{
+  font-size:clamp(36px,5vw,64px);
+  margin-bottom:24px;
+}
 
-    @keyframes float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-16px)}
-    }
+.hero h1 span{
+  color:var(--pink);
+  text-shadow:0 0 20px rgba(255,79,216,.8);
+}
 
-    footer{
-      padding:40px;
-      text-align:center;
-      color:var(--gray);
-      border-top:1px solid rgba(255,255,255,.05);
-    }
+.hero p{
+  font-size:18px;
+  color:var(--gray);
+  max-width:520px;
+}
 
-    @media(max-width:900px){
-      .hero-grid{grid-template-columns:1fr}
-      header{padding:0 20px}
-    }
-  </style>
+/* ANIM SYMBOL */
+.symbol{
+  display:inline-block;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.25)}
+}
+
+/* PROJECTS */
+.projects{
+  padding:120px 10vw;
+}
+
+.projects h2{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:60px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:40px;
+}
+
+.card{
+  background:var(--bg-soft);
+  padding:30px;
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 0 25px rgba(0,0,0,.4);
+  transition:.3s;
+  animation:float 7s ease-in-out infinite;
+}
+
+.card:hover{
+  transform:translateY(-8px) scale(1.03);
+}
+
+.icon{
+  font-size:48px;
+  margin-bottom:16px;
+}
+
+.card p{
+  color:var(--gray);
+  font-size:14px;
+}
+
+/* FOOTER */
+footer{
+  padding:60px 20px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.05);
+}
+
+.socials a{
+  font-size:28px;
+  margin:0 14px;
+  text-decoration:none;
+  color:var(--milk);
+  transition:.3s;
+}
+
+.socials a:hover{
+  color:var(--pink);
+  text-shadow:0 0 12px rgba(255,79,216,.7);
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center}
+  .hub{margin:0 auto}
+}
+</style>
 </head>
+
 <body>
 
 <header>
   <div class="brand">Mr_Rendie_Hub</div>
   <nav>
-    <a href="index.html">Главная</a>
-    <a href="projects.html">Проекты</a>
-    <a href="contact.html">Контакты</a>
+    <a href="#">Главная</a>
+    <a href="#">Проекты</a>
+    <a href="#">Контакты</a>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="hero-grid">
-    <div>
-      <h1>Добро пожаловать в <span>Mr_Rendie_Hub</span></h1>
-      <p>Авторская лаборатория проектов: музыка, игры, манга, анимация и эксперименты.</p>
-      <div class="hero-actions">
-        <button class="btn" onclick="location.href='projects.html'">Проекты</button>
-        <button class="btn secondary">О бренде</button>
-      </div>
+  <div>
+    <h1>
+      Добро пожаловать <span class="symbol">✧</span><br>
+      в <span>Mr_Rendie_Hub</span>
+    </h1>
+    <p>
+      Авторская лаборатория проектов: музыка, игры, манга, анимации, эксперименты  
+      и идеи, которые иногда выглядят как баги реальности.
+    </p>
+  </div>
+
+  <div class="hub">☄</div>
+</section>
+
+<section class="projects">
+  <h2>Проекты</h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon">🎵</div>
+      <h3>Музыка</h3>
+      <p>Звуки, от которых нейросети плачут, а реальность вибрирует.</p>
     </div>
 
-    <div class="avatar">
-  <div class="glow"></div>
-  <img src="./assets/img/avatar.png" alt="Mr Rendie">
-</div>
+    <div class="card">
+      <div class="icon">🎮</div>
+      <h3>Игры</h3>
+      <p>Эксперименты с геймплеем, балансом и здравым смыслом.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📖</div>
+      <h3>Манга</h3>
+      <p>Темные миры, сильные герои и слишком много экзистенции.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎬</div>
+      <h3>Анимация</h3>
+      <p>Кадры, которые двигаются быстрее дедлайнов.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🤖</div>
+      <h3>Telegram-бот</h3>
+      <p>Отвечает быстрее людей. Иногда умнее.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛰</div>
+      <h3>Космический мессенджер</h3>
+      <p>Ловит сигнал даже там, где здравый смысл уже не ловит.</p>
+    </div>
 
   </div>
 </section>
 
 <footer>
-  © 2026 Mr_Rendie_Hub
+  <div class="socials">
+    <a href="https://vk.com/id339669358" target="_blank">VK</a>
+    <a href="https://web.telegram.im/#-1836992790" target="_blank">TG</a>
+  </div>
+  <p style="margin-top:20px;color:var(--gray)">© 2026 Mr_Rendie_Hub</p>
 </footer>
 
 </body>
 </html>
+
 
 
 
