@@ -2,15 +2,14 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Mr_Rendie_Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr_Rendie_Hub</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0b0b10;
-  --card:#14141b;
+  --bg:#0e0e11;
   --milk:#f5f2ee;
   --pink:#ff4fd8;
   --violet:#8b5cff;
@@ -19,9 +18,11 @@
 
 *{margin:0;padding:0;box-sizing:border-box}
 
+html{scroll-behavior:smooth}
+
 body{
   font-family:'Montserrat',sans-serif;
-  background:radial-gradient(circle at top, #1a1a25 0%, var(--bg) 65%);
+  background:radial-gradient(ellipse at top, #1a1a25 0%, var(--bg) 60%);
   color:var(--milk);
 }
 
@@ -29,12 +30,12 @@ body{
 header{
   position:fixed;
   top:0;left:0;right:0;
-  height:70px;
-  padding:0 40px;
+  height:72px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(10,10,15,.65);
+  padding:0 40px;
+  background:rgba(14,14,17,.7);
   backdrop-filter:blur(12px);
   z-index:100;
 }
@@ -42,27 +43,34 @@ header{
 .brand{
   font-weight:900;
   color:var(--pink);
+  font-size:22px;
   text-shadow:0 0 12px rgba(255,79,216,.6);
 }
 
 nav a{
-  margin-left:26px;
-  text-decoration:none;
   color:var(--milk);
+  text-decoration:none;
+  margin-left:26px;
 }
 
 /* HERO */
 .hero{
   min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:140px 10vw 80px;
+}
+
+.hero-grid{
   display:grid;
-  grid-template-columns:1.1fr .9fr;
+  grid-template-columns:1fr 1fr;
   gap:60px;
   align-items:center;
-  padding:120px 10vw 80px;
 }
 
 .hero h1{
-  font-size:clamp(38px,5vw,64px);
+  font-size:clamp(36px,5vw,64px);
+  margin-bottom:20px;
 }
 
 .hero span{
@@ -71,23 +79,24 @@ nav a{
 }
 
 .hero p{
-  margin-top:20px;
-  max-width:520px;
+  font-size:18px;
   color:var(--gray);
-  line-height:1.6;
+  max-width:520px;
 }
 
-/* ANIMATED STAR */
+/* STAR */
 .star-wrap{
   display:flex;
   justify-content:center;
 }
 
 .star{
-  width:260px;
-  height:260px;
-  animation:float 6s ease-in-out infinite, spin 18s linear infinite;
-  filter:drop-shadow(0 0 40px rgba(255,79,216,.7));
+  font-size:160px;
+  color:var(--pink);
+  text-shadow:
+    0 0 20px rgba(255,79,216,.8),
+    0 0 60px rgba(139,92,255,.6);
+  animation:float 6s ease-in-out infinite, spin 12s linear infinite;
 }
 
 @keyframes float{
@@ -102,77 +111,59 @@ nav a{
 
 /* PROJECTS */
 .projects{
-  padding:100px 8vw;
+  padding:120px 10vw;
 }
 
 .projects h2{
+  font-size:40px;
   text-align:center;
-  font-size:38px;
-  margin-bottom:80px;
+  margin-bottom:60px;
 }
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:50px;
-  justify-items:center;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
 
 .card{
-  width:220px;
-  height:220px;
-  background:var(--card);
-  transform:rotate(45deg);
-  border-radius:26px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 0 40px rgba(0,0,0,.6);
-  transition:.4s;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:26px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 30px rgba(0,0,0,.4);
+  transform:translateY(40px);
+  opacity:0;
+  transition:.6s;
 }
 
-.card:hover{
-  transform:rotate(45deg) translateY(-12px);
-  box-shadow:0 0 60px rgba(139,92,255,.45);
+.card.show{
+  transform:translateY(0);
+  opacity:1;
 }
 
-.card-inner{
-  transform:rotate(-45deg);
-  text-align:center;
-  padding:20px;
+.card h3{
+  margin-bottom:10px;
+  color:var(--pink);
 }
 
-.card-inner h3{
-  margin:12px 0;
-}
-
-.card-inner p{
-  font-size:14px;
+.card p{
+  font-size:15px;
   color:var(--gray);
 }
 
 /* FOOTER */
 footer{
-  padding:60px 20px;
+  padding:60px;
   text-align:center;
-}
-
-.socials a{
-  margin:0 14px;
-  font-size:26px;
-  color:var(--milk);
-  text-decoration:none;
-  transition:.3s;
-}
-
-.socials a:hover{
-  color:var(--pink);
+  color:var(--gray);
 }
 
 /* MOBILE */
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .grid{grid-template-columns:1fr 1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .star{font-size:120px}
 }
 </style>
 </head>
@@ -182,89 +173,70 @@ footer{
 <header>
   <div class="brand">Mr_Rendie_Hub</div>
   <nav>
-    <a href="#">Главная</a>
-    <a href="#">Проекты</a>
-    <a href="#">Контакты</a>
+    <a href="#projects">Проекты</a>
   </nav>
 </header>
 
 <section class="hero">
-  <div>
-    <h1>Добро пожаловать <br>в <span>Mr_Rendie_Hub</span></h1>
-    <p>
-      Авторская лаборатория проектов: музыка, игры, манга, анимация  
-      и технологии, которые иногда выглядят как баги реальности —  
-      но именно так и рождаются идеи.
-    </p>
-  </div>
+  <div class="hero-grid">
+    <div>
+      <h1>Добро пожаловать в <span>Mr_Rendie_Hub</span></h1>
+      <p>
+        Авторская лаборатория проектов: музыка, игры, манга, анимации,
+        эксперименты и технологии, которые «не должны были работать,
+        но почему-то работают».
+      </p>
+    </div>
 
-  <div class="star-wrap">
-    <svg class="star" viewBox="0 0 100 100">
-      <polygon points="50,5 61,38 95,50 61,62 50,95 39,62 5,50 39,38"
-        fill="url(#g)"/>
-      <defs>
-        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#ff4fd8"/>
-          <stop offset="100%" stop-color="#8b5cff"/>
-        </linearGradient>
-      </defs>
-    </svg>
+    <div class="star-wrap">
+      <div class="star">✦</div>
+    </div>
   </div>
 </section>
 
-<section class="projects">
+<section id="projects" class="projects">
 <h2>Проекты</h2>
 
 <div class="grid">
-
-<div class="card"><div class="card-inner">
-<h3>🎵 Музыка</h3>
-<p>Звуки, которые давят на мозг мягче, чем нейросети, но глубже, чем тренды.</p>
-</div></div>
-
-<div class="card"><div class="card-inner">
-<h3>🎮 Игры</h3>
-<p>Геймплей, где баланс — не баг, а редкий артефакт.</p>
-</div></div>
-
-<div class="card"><div class="card-inner">
-<h3>📖 Манга</h3>
-<p>Тьма, философия и слишком много смысла для одной реальности.</p>
-</div></div>
-
-<div class="card"><div class="card-inner">
-<h3>🎬 Анимация</h3>
-<p>Кадры, которые движутся быстрее дедлайнов и здравого смысла.</p>
-</div></div>
-
-<div class="card"><div class="card-inner">
-<h3>🤖 Telegram-бот</h3>
-<p>Отвечает быстрее людей и иногда умнее. Иногда.</p>
-</div></div>
-
-<div class="card"><div class="card-inner">
-<h3>🛰 VPN</h3>
-<p>Работает даже там, где интернет «пошёл за хлебом и не вернулся».</p>
-</div></div>
-
-<div class="card"><div class="card-inner">
-<h3>🌌 Космо-мессенджер</h3>
-<p>Ловит сигнал там, где Wi-Fi уже сдался и заплакал.</p>
-</div></div>
-
+  <div class="card"><h3>🎵 Музыка</h3><p>От эмбиента до треков, которые случайно становятся саундтреком жизни.</p></div>
+  <div class="card"><h3>🎮 Игры</h3><p>Инди-проекты, где баланс — это миф, а удовольствие — цель.</p></div>
+  <div class="card"><h3>📖 Манга</h3><p>Тьма, философия и персонажи, которые живут дольше автора.</p></div>
+  <div class="card"><h3>🎬 Анимации</h3><p>Кадры, где физика сдаётся первой.</p></div>
+  <div class="card"><h3>🤖 Telegram-бот</h3><p>Бот, который знает больше, чем должен. Иногда пугающе.</p></div>
+  <div class="card"><h3>🛡 Новый VPN</h3><p>Работает там, где «ничего не работает». Даже в общественном Wi-Fi.</p></div>
+  <div class="card"><h3>📡 Космо-мессенджер</h3><p>Связь, которая переживёт апокалипсис и плохой интернет.</p></div>
+  <div class="card"><h3>🧠 JARVIS</h3><p>Голосовой помощник. Пока без костюма Старка, но уже умный.</p></div>
 </div>
 </section>
 
 <footer>
-  <div class="socials">
-    <a href="https://vk.com/id339669358" target="_blank">VK</a>
-    <a href="https://web.telegram.im/#-1836992790" target="_blank">TG</a>
-  </div>
-  <p style="margin-top:20px;color:var(--gray)">© 2026 Mr_Rendie_Hub</p>
+© 2026 Mr_Rendie_Hub
 </footer>
+
+<script>
+/* Parallax */
+window.addEventListener('scroll',()=>{
+  document.querySelector('.star').style.transform =
+    `translateY(${window.scrollY * 0.2}px) rotate(${window.scrollY * 0.05}deg)`
+})
+
+/* Cards animation */
+const cards=document.querySelectorAll('.card')
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('show'), i*120)
+    }
+  })
+},{threshold:.2})
+
+cards.forEach(c=>observer.observe(c))
+</script>
 
 </body>
 </html>
+
+
 
 
 
