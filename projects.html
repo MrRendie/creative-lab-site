@@ -2,113 +2,149 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Музыка — Mr_Rendie_Hub</title>
+  <title>Проекты — Mr_Rendie_Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ОСНОВНОЙ СТИЛЬ -->
   <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 
 <body>
 
-<!-- ===== HEADER ===== -->
 <header class="header">
   <div class="brand">Mr_Rendie_Hub</div>
 
   <nav class="nav">
-    <a href="../index.html">Главная</a>
-    <a href="../projects.html" class="active">Проекты</a>
-    <a href="../contact.html">Контакты</a>
-    <button id="themeToggle" aria-label="Сменить тему">🌓</button>
+    <a href="index.html">Главная</a>
+    <a href="projects.html" class="active">Проекты</a>
+    <a href="contact.html">Контакты</a>
   </nav>
 </header>
 
-<main>
+<main class="projects-page">
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <h1>Музыка</h1>
-  <p>
-    Музыка, когда слова уже не помогают.<br>
-    Для тех, кому тяжело. Для своих.
-  </p>
-</section>
+  <section class="hero">
+    <h1>Проекты</h1>
+    <p>Живые идеи. Незавершённые миры. Эксперименты.</p>
+  </section>
 
-<!-- ===== MUSIC ===== -->
-<section class="music-list">
+  <section class="projects-list">
 
-  <!-- ТРЕК -->
- <div class="track neon-player">
-
-  <div class="cover">
-    <img src="../assets/img/zhelaniya-cover.jpg" alt="Желания — обложка">
-  </div>
-
-  <div class="player-info">
-    <h3>Желания</h3>
-    <p>Ностальгическое настроение. О том, что не сбылось, но осталось внутри.</p>
-
-    <div class="controls">
-      <button class="play-btn">▶</button>
-
-      <div class="progress-container">
-        <span class="current-time">0:00</span>
-        <input type="range" class="progress" value="0">
-        <span class="duration">0:00</span>
+    <!-- МУЗЫКА -->
+    <article class="project-card">
+      <img src="assets/img/icons/music.svg" alt="">
+      <div>
+        <h2>Музыка</h2>
+        <p>
+          Авторские песни о состоянии, когда слов уже не хватает.
+          Для тех, кому тяжело. Для своих.
+        </p>
+        <a class="project-btn" href="music.html">Открыть проект</a>
       </div>
-    </div>
+    </article>
 
-    <a class="download-btn" href="../assets/music/zhelaniya.mp3" download>
-      ⬇ Скачать
-    </a>
-  </div>
+    <!-- МАНГА -->
+    <article class="project-card">
+      <img src="assets/img/icons/manga.svg" alt="">
+      <div>
+        <h2>Манга</h2>
+        <p>
+          Большая история, разделённая на эпохи. Философия,
+          жестокость, выбор и последствия.
+        </p>
+        <a class="project-btn" href="#">В разработке</a>
+      </div>
+    </article>
 
-  <audio id="audio" src="../assets/music/zhelaniya.mp3"></audio>
+    <!-- ИГРЫ -->
+    <article class="project-card">
+      <img src="assets/img/icons/games.svg" alt="">
+      <div>
+        <h2>Игры</h2>
+        <p>
+          Инди-проекты, прототипы, концепции.
+          Много идей. Мало ограничений.
+        </p>
+        <a class="project-btn" href="#">В разработке</a>
+      </div>
+    </article>
 
-</div>
+    <!-- TELEGRAM BOT -->
+    <article class="project-card">
+      <img src="assets/img/icons/bot.svg" alt="">
+      <div>
+        <h2>Грустный друг</h2>
+        <p>
+          Телеграм-бот, который умеет слушать.
+          Поддерживает цитатами и музыкой.
+        </p>
+        <a class="project-btn" href="#">В разработке</a>
+      </div>
+    </article>
 
-  </div>
+    <!-- VPN -->
+    <article class="project-card">
+      <img src="assets/img/icons/vpn.svg" alt="">
+      <div>
+        <h2>Новый VPN</h2>
+        <p>
+          Идея свободного доступа к информации
+          без слежки и ограничений.
+        </p>
+        <a class="project-btn" href="#">Идея</a>
+      </div>
+    </article>
 
-  <!-- 👉 СЮДА ТЫ ПРОСТО КОПИРУЕШЬ БЛОК ДЛЯ НОВЫХ ТРЕКОВ -->
+    <!-- АНИМАЦИИ -->
+    <article class="project-card">
+      <img src="assets/img/icons/animation.svg" alt="">
+      <div>
+        <h2>Анимации</h2>
+        <p>
+          Короткие сцены и визуальные эксперименты.
+          Там, где физика сдаётся первой.
+        </p>
+        <a class="project-btn" href="#">Открыть</a>
+      </div>
+    </article>
 
-</section>
+    <!-- JARVIS -->
+    <article class="project-card">
+      <img src="assets/img/icons/jarvis.svg" alt="">
+      <div>
+        <h2>JARVIS</h2>
+        <p>
+          Голосовой помощник с характером Мегумин.
+          Не ИИ — личность.
+        </p>
+        <a class="project-btn" href="#">Прототип</a>
+      </div>
+    </article>
 
-<!-- ===== AUTHOR NOTE ===== -->
-<section class="author-note">
-  <h2>Почему я это пишу</h2>
-  <p>
-    Иногда внутри слишком много всего, и единственный способ не сломаться —
-    это выпустить это наружу. Эта музыка — не для сцены.
-    Она для тех, кто просто хочет, чтобы его поняли.
-  </p>
-</section>
+    <!-- МЕССЕНДЖЕР -->
+    <article class="project-card">
+      <img src="assets/img/icons/messenger.svg" alt="">
+      <div>
+        <h2>Новый мессенджер</h2>
+        <p>
+          Связь, где безопасность пользователя —
+          не пустой звук.
+        </p>
+        <a class="project-btn" href="#">Идея</a>
+      </div>
+    </article>
 
-<!-- ===== COMMENTS ===== -->
-<section class="comments">
-  <h2>Комментарии</h2>
-
-  <script
-    src="https://utteranc.es/client.js"
-    repo="Mr_Rendie/creative-lab-site"
-    issue-term="pathname"
-    label="music"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async>
-  </script>
-</section>
+  </section>
 
 </main>
 
-<!-- ===== FOOTER ===== -->
 <footer class="footer">
-  <p>© 2026 Mr_Rendie_Hub</p>
+  © 2026 Mr_Rendie_Hub
 </footer>
 
-<script src="../assets/js/script.js"></script>
 </body>
 </html>
+
+
 
 
 
