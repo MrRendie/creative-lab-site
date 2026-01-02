@@ -118,3 +118,65 @@ button[type="submit"] {
   padding: 1rem;
 }
 
+/* ===== MUSIC PAGE ===== */
+
+.music-list {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.track:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(120,120,255,0.3);
+}
+
+.track-info h3 {
+  margin: 0 0 0.5rem;
+}
+
+.track-controls {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.track audio {
+  width: 100%;
+}
+
+.download-btn {
+  align-self: flex-start;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #7f7fff, #a855f7);
+  color: #fff;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.download-btn:hover {
+  opacity: 0.85;
+}
+
+.author-note {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+  opacity: 0.9;
+}
+
+
